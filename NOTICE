@@ -1,0 +1,13 @@
+CCFDDLMenuBar NOTICE
+
+1. Data source
+   This project fetches conference metadata from https://ccfddl.cn/ for display and reminder features.
+
+2. Upstream attribution
+   The ecosystem project https://github.com/ccfddl/ccf-deadlines is licensed under MIT.
+   If this repository includes any copied/adapted material from that upstream project, the original copyright
+   and license notice must be retained as required by the MIT License.
+
+3. Independent project statement
+   This repository is an independent client implementation and is not an official release of ccfddl.
+
