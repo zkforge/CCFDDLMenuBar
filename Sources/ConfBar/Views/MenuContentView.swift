@@ -291,7 +291,7 @@ struct MenuContentView: View {
             menuActionRow(title: t("设置…", "Settings…"), systemName: "gearshape") {
                 openSettingsWindow()
             }
-            menuActionRow(title: t("退出 CCFDDL", "Quit CCFDDL"), systemName: "power") {
+            menuActionRow(title: t("退出 ConfBar", "Quit ConfBar"), systemName: "power") {
                 NSApp.terminate(nil)
             }
         }

@@ -110,7 +110,7 @@ struct ConferenceCacheStore {
     init(fileManager: FileManager = .default) {
         self.fileManager = fileManager
         let baseURL = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        let directoryURL = baseURL.appendingPathComponent("CCFDDLMenuBar", isDirectory: true)
+        let directoryURL = baseURL.appendingPathComponent("ConfBar", isDirectory: true)
         self.fileURL = directoryURL.appendingPathComponent("conference_cache.json")
     }
 

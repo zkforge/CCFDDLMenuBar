@@ -51,7 +51,7 @@ final class CalendarExportService {
         var lines: [String] = []
         lines.append("BEGIN:VCALENDAR")
         lines.append("VERSION:2.0")
-        lines.append("PRODID:-//CCFDDLMenuBar//EN")
+        lines.append("PRODID:-//ConfBar//EN")
         lines.append("CALSCALE:GREGORIAN")
         lines.append("METHOD:PUBLISH")
 

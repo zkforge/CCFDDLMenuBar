@@ -2,16 +2,16 @@
 import PackageDescription
 
 let package = Package(
-    name: "CCFDDLMenuBar",
+    name: "ConfBar",
     platforms: [
         .macOS(.v13)
     ],
     products: [
-        .executable(name: "CCFDDLMenuBar", targets: ["CCFDDLMenuBar"])
+        .executable(name: "ConfBar", targets: ["ConfBar"])
     ],
     targets: [
         .executableTarget(
-            name: "CCFDDLMenuBar",
+            name: "ConfBar",
             linkerSettings: [
                 .linkedFramework("AppKit"),
                 .linkedFramework("JavaScriptCore"),

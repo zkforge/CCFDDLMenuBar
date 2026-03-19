@@ -1,7 +1,7 @@
 import Foundation
 import JavaScriptCore
 
-enum CCFDDLServiceError: Error {
+enum ConfBarServiceError: Error {
     case badResponse
     case htmlDecodeFailed
     case noRowsFound
@@ -24,18 +24,18 @@ enum CCFDDLServiceError: Error {
     }
 }
 
-struct CCFDDLService {
+struct ConfBarService {
     private let sourceURL = URL(string: "https://ccfddl.cn/")!
 
     func fetchConferences() async throws -> [Conference] {
         let (data, response) = try await URLSession.shared.data(from: sourceURL)
         guard let httpResponse = response as? HTTPURLResponse,
               (200...299).contains(httpResponse.statusCode) else {
-            throw CCFDDLServiceError.badResponse
+            throw ConfBarServiceError.badResponse
         }
 
         guard let html = String(data: data, encoding: .utf8) else {
-            throw CCFDDLServiceError.htmlDecodeFailed
+            throw ConfBarServiceError.htmlDecodeFailed
         }
 
         let rows = try parseRows(from: html)
@@ -69,7 +69,7 @@ struct CCFDDLService {
         let range = NSRange(html.startIndex..<html.endIndex, in: html)
         let matches = regex.matches(in: html, range: range)
         guard !matches.isEmpty else {
-            throw CCFDDLServiceError.noRowsFound
+            throw ConfBarServiceError.noRowsFound
         }
 
         var script = "var rows = [];\n"
@@ -84,17 +84,17 @@ struct CCFDDLService {
 
         let context = JSContext()
         guard let jsonString = context?.evaluateScript(script)?.toString() else {
-            throw CCFDDLServiceError.javascriptParseFailed
+            throw ConfBarServiceError.javascriptParseFailed
         }
 
         guard let jsonData = jsonString.data(using: .utf8) else {
-            throw CCFDDLServiceError.javascriptParseFailed
+            throw ConfBarServiceError.javascriptParseFailed
         }
 
         do {
             return try JSONDecoder().decode([RawConference].self, from: jsonData)
         } catch {
-            throw CCFDDLServiceError.jsonDecodeFailed
+            throw ConfBarServiceError.jsonDecodeFailed
         }
     }
 

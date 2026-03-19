@@ -1,4 +1,4 @@
-# CCFDDLMenuBar
+# ConfBar
 
 ![GitHub stars](https://img.shields.io/github/stars/zkforge/CCFDDLMenuBar?style=social)
 ![GitHub release](https://img.shields.io/github/v/release/zkforge/CCFDDLMenuBar)
@@ -6,15 +6,16 @@
 
 Native macOS menu bar app (SwiftUI + MenuBarExtra) that shows upcoming CCFDDL conference deadlines and live countdowns.
 
-[中文文档](./README-zh.md) | [English Documentation](./README.md)
+[中文文档](./README-zh.md)
 
 ## Screenshots
 
+![Menu panel (Chinese)](./Assets/Screenshots/menu-zh.png)
 ![Menu panel (English)](./Assets/Screenshots/menu-en.png)
 
 ## Features
 
-- Menu bar title defaults to `CCF`; you can pin a conference and show minute-level countdown (for example `AAAI: 2d 10h 20m`)
+- Menu bar title defaults to `ConfBar`; you can pin a conference and show minute-level countdown (for example `AAAI: 2d 10h 20m`)
 - Searchable conference picker in menu bar settings (alias + fuzzy matching)
 - Dropdown panel with upcoming deadlines (top 30 by default)
 - Dedicated settings window for filtering, sorting, reminders, and calendar export
@@ -44,17 +45,16 @@ When reminders are enabled for the first time, macOS will ask for notification p
 ## Project Structure
 
 ```text
-ccfddlmenubar/
+confbar/
 ├── Assets/                          # App assets (icon and screenshots)
 │   └── Screenshots/                # README screenshots
-├── Sources/CCFDDLMenuBar/          # Core logic and app entry
+├── Sources/ConfBar/                  # Core logic and app entry
 │   └── Views/                      # Menu bar and settings UI
 ├── LICENSE                         # MIT license
 ├── NOTICE                          # Data source attribution
 ├── Package.swift                   # Swift Package manifest
-├── README.md                       # README entry
-├── README.zh-CN.md                 # Chinese README
-└── README.en.md                    # English README
+├── README.md                       # English README entry
+└── README-zh.md                    # Chinese README
 ```
 
 ## License

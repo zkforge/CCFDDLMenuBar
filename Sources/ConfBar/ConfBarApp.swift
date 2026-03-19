@@ -12,7 +12,7 @@ enum SettingsWindowLayout {
 }
 
 @main
-struct CCFDDLMenuBarApp: App {
+struct ConfBarApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @StateObject private var store = DeadlineStore()
 
@@ -23,7 +23,7 @@ struct CCFDDLMenuBarApp: App {
         }
         .menuBarExtraStyle(.window)
 
-        Window("CCFDDL", id: AppWindowID.settings) {
+        Window("ConfBar", id: AppWindowID.settings) {
             SettingsView(store: store)
                 .environment(\.locale, store.language.locale)
         }

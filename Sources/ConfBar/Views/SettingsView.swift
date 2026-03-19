@@ -246,7 +246,7 @@ struct SettingsView: View {
         ) {
             HStack {
                 Spacer()
-                Button(t("退出 CCFDDL", "Quit CCFDDL")) {
+                Button(t("退出 ConfBar", "Quit ConfBar")) {
                     NSApp.terminate(nil)
                 }
                 .buttonStyle(.borderedProminent)
@@ -258,7 +258,7 @@ struct SettingsView: View {
     private var aboutPane: some View {
         VStack(alignment: .leading, spacing: 16) {
             SettingsCard(
-                title: "CCFDDL Menu Bar",
+                title: "ConfBar",
                 subtitle: t("会议截止日期菜单栏工具。数据来源于 ccfddl.cn。", "A menu bar tool for conference deadlines. Data source: ccfddl.cn.")
             ) {
                 Button(t("打开 ccfddl.cn", "Open ccfddl.cn")) {

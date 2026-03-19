@@ -22,7 +22,7 @@ final class DeadlineStore: ObservableObject {
     @Published private(set) var menuBarPinnedConferenceID: String?
     @Published private(set) var language: AppLanguage
 
-    private let service = CCFDDLService()
+    private let service = ConfBarService()
     private let preferencesStore = PreferencesStore()
     private let cacheStore = ConferenceCacheStore()
     private let notificationManager = DeadlineNotificationManager()
@@ -53,7 +53,7 @@ final class DeadlineStore: ObservableObject {
 
     var menuBarTitle: String {
         guard let displayedConference = menuBarDisplayedConference else {
-            return "CCF"
+            return "ConfBar"
         }
         let countdownText = CountdownFormatter.menuBarPrecise(
             from: now,
@@ -380,7 +380,7 @@ final class DeadlineStore: ObservableObject {
     }
 
     private func localizedErrorMessage(_ error: Error) -> String {
-        if let serviceError = error as? CCFDDLServiceError {
+        if let serviceError = error as? ConfBarServiceError {
             return serviceError.message(language: language)
         }
         if let exportError = error as? CalendarExportError {

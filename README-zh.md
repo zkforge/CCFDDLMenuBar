@@ -1,4 +1,4 @@
-# CCFDDLMenuBar
+# ConfBar
 
 ![GitHub stars](https://img.shields.io/github/stars/zkforge/CCFDDLMenuBar?style=social)
 ![GitHub release](https://img.shields.io/github/v/release/zkforge/CCFDDLMenuBar)
@@ -6,15 +6,16 @@
 
 原生 macOS 菜单栏应用（SwiftUI + MenuBarExtra），展示 CCFDDL 最近会议截止日期与倒计时。
 
-[中文文档](./README-zh.md) | [English Documentation](./README.md)
+[English Documentation](./README.md)
 
 ## 应用截图
 
 ![菜单面板（中文）](./Assets/Screenshots/menu-zh.png)
+![菜单面板（英文）](./Assets/Screenshots/menu-en.png)
 
 ## 功能
 
-- 菜单栏默认显示 `CCF`，可在设置中指定一个会议并显示分钟级倒计时（如 `AAAI: 2d 10h 20m`）
+- 菜单栏默认显示 `ConfBar`，可在设置中指定一个会议并显示分钟级倒计时（如 `AAAI: 2d 10h 20m`）
 - 菜单栏会议选择支持搜索（别名 + 模糊匹配），会议很多时可快速定位
 - 下拉面板显示未来截止会议列表（默认前 30 条）
 - 独立设置窗口：筛选、排序、提醒和导出统一管理
@@ -43,17 +44,16 @@
 ## 目录结构
 
 ```text
-ccfddlmenubar/
+confbar/
 ├── Assets/                          # 应用资源（图标与截图）
 │   └── Screenshots/                # README 展示截图
-├── Sources/CCFDDLMenuBar/          # 核心业务与应用入口
+├── Sources/ConfBar/                  # 核心业务与应用入口
 │   └── Views/                      # 菜单栏与设置界面
 ├── LICENSE                         # 开源许可证（MIT）
 ├── NOTICE                          # 数据来源与归属声明
 ├── Package.swift                   # Swift Package 配置
-├── README.md                       # README 入口
-├── README.zh-CN.md                 # 中文文档
-└── README.en.md                    # 英文文档
+├── README.md                       # 英文文档入口
+└── README-zh.md                    # 中文文档
 ```
 
 ## 开源许可证
