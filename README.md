@@ -1,61 +1,74 @@
 # CCFDDLMenuBar
 
-原生 macOS 菜单栏工具（SwiftUI + MenuBarExtra），展示 CCFDDL 最近会议截止日期与倒计时。
+![GitHub stars](https://img.shields.io/github/stars/zkforge/CCFDDLMenuBar?style=social)
+![GitHub release](https://img.shields.io/github/v/release/zkforge/CCFDDLMenuBar)
+![License](https://img.shields.io/github/license/zkforge/CCFDDLMenuBar)
 
-## 功能
+Native macOS menu bar app (SwiftUI + MenuBarExtra) that shows upcoming CCFDDL conference deadlines and live countdowns.
 
-- 菜单栏默认显示 `CCF`，可在设置中指定一个会议并显示分钟级倒计时（如 `AAAI: 2d 10h 20m`）
-- 菜单栏会议选择支持搜索（别名+模糊匹配），会议很多时可快速定位
-- 下拉面板显示未来截止会议列表（默认前 30 条）
-- 独立设置窗口：筛选、排序、提醒和导出全部在设置窗口管理
-- 应用退出入口在菜单栏面板与设置窗口均可用
-- 手动刷新 + 每 30 分钟自动刷新
-- 点击会议条目直接打开官网链接
-- 截止提醒：支持 `24h/6h/1h` 本地通知（可开关）
-- 日历导出：一键导出 `.ics`
-- 搜索增强：支持会议别名（如 `NeurIPS/NIPS`）与模糊匹配
-- 智能排序：支持按距离截止/会议日期/CCF等级排序（默认距离截止）
-- 筛选持久化：关键词、CCF 级别、方向、仅收藏、排序方式和菜单栏会议选择自动保存
-- 收藏置顶：收藏会议会在列表中自动排到前面
-- 数据源：`https://ccfddl.cn/`
+[中文文档](./README-zh.md) | [English Documentation](./README.md)
 
-## 环境要求
+## Screenshots
+
+![Menu panel (English)](./Assets/Screenshots/menu-en.png)
+
+## Features
+
+- Menu bar title defaults to `CCF`; you can pin a conference and show minute-level countdown (for example `AAAI: 2d 10h 20m`)
+- Searchable conference picker in menu bar settings (alias + fuzzy matching)
+- Dropdown panel with upcoming deadlines (top 30 by default)
+- Dedicated settings window for filtering, sorting, reminders, and calendar export
+- Quit entry available in both menu panel and settings window
+- Manual refresh + automatic refresh every 30 minutes
+- Click conference item to open the official website
+- Deadline reminders via local notifications (`24h/6h/1h`, configurable)
+- One-click `.ics` calendar export
+- Search enhancement with aliases (for example `NeurIPS/NIPS`) and fuzzy matching
+- Smart sorting by time-to-deadline, conference date, or CCF rank (default: time-to-deadline)
+- Persistent filters and preferences (keyword, CCF rank, area, favorites-only, sort mode, selected menu-bar conference)
+- Favorites are pinned to the top
+- Data source: `https://ccfddl.cn/`
+
+## Requirements
 
 - macOS 13+
-- Xcode 16+（或 Swift 6.0+ 工具链）
+- Xcode 16+ (or Swift 6.0+ toolchain)
 
-下载
+## Run
 
-运行后会在菜单栏显示文本（默认 `CCF`）。应用是菜单栏模式，不会显示 Dock 图标。
-点击菜单栏面板里的“设置”可打开独立设置窗口。
+After launch, a menu bar item appears (default `CCF`).  
+This is a menu-bar-only app and does not show a Dock icon.
+Open the standalone settings window from the menu panel via "Settings...".
+When reminders are enabled for the first time, macOS will ask for notification permission.
 
-首次启用提醒时，macOS 会弹出通知授权请求。
-
-## 目录结构
+## Project Structure
 
 ```text
 ccfddlmenubar/
-├── Assets/                          # 应用资源（图标源图与 AppIcon.icns）
-├── Sources/CCFDDLMenuBar/           # 核心业务与应用入口
-│   └── Views/                       # 菜单栏与设置界面
-├── LICENSE                          # 开源许可证（MIT）
-├── NOTICE                           # 数据来源与归属声明
-├── Package.swift                    # Swift Package 配置
-└── README.md
+├── Assets/                          # App assets (icon and screenshots)
+│   └── Screenshots/                # README screenshots
+├── Sources/CCFDDLMenuBar/          # Core logic and app entry
+│   └── Views/                      # Menu bar and settings UI
+├── LICENSE                         # MIT license
+├── NOTICE                          # Data source attribution
+├── Package.swift                   # Swift Package manifest
+├── README.md                       # README entry
+├── README.zh-CN.md                 # Chinese README
+└── README.en.md                    # English README
 ```
 
-## 开源许可证
+## License
 
-本项目使用 MIT 许可证发布，详见 [LICENSE](./LICENSE)。
+This project is released under the MIT License. See [LICENSE](./LICENSE).
 
-## 数据来源与归属声明
+## Data Source and Attribution
 
-- 本项目通过 `https://ccfddl.cn/` 拉取公开会议信息，仅用于截止时间展示与提醒。
-- 本项目是独立实现的客户端，不是 `ccfddl` 官方发布。
-- 若你复用本项目代码，请遵守 [LICENSE](./LICENSE)。
-- 若你在本仓库中引入或复用 `ccfddl/ccf-deadlines` 的代码或数据文件，请保留其 MIT 许可与版权声明。
+- This app fetches public conference information from `https://ccfddl.cn/` for deadline display and reminders.
+- This is an independent client implementation and is not an official release from `ccfddl`.
+- If you reuse this project code, keep the [LICENSE](./LICENSE).
+- If you include or reuse code/data from `ccfddl/ccf-deadlines`, preserve its MIT license and copyright notices.
 
-## 致谢
+## Acknowledgements
 
-- 上游生态项目：[`ccfddl/ccf-deadlines`](https://github.com/ccfddl/ccf-deadlines)（MIT）
-- 额外说明见 [NOTICE](./NOTICE)。
+- Upstream ecosystem project: [`ccfddl/ccf-deadlines`](https://github.com/ccfddl/ccf-deadlines) (MIT)
+- Additional notes in [NOTICE](./NOTICE)
